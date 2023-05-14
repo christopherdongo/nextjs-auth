@@ -13,7 +13,7 @@ import clientPromise from '@/lib/mongodb';
 
 
 export default NextAuth({
-  adapter: MongoDBAdapter(clientPromise),
+  // adapter: MongoDBAdapter(clientPromise),
   providers: [
     // OAuth authentication providers...
     FacebookProvider({
