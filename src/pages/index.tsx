@@ -5,9 +5,7 @@ import { useSession, signIn, signOut, getSession } from "next-auth/react"
 export default function Home() {
 
   const { data: session } = useSession()
-
   console.log(session)
-
   return (
     <div
     className="min-h-screen flex flex-col justify-center items-center content-center"
@@ -22,7 +20,8 @@ export default function Home() {
           className="w-[128px] h-32 rounded-full border-collapse"
           /> : false
         }
-        <h4>{session?.user?.email}</h4>
+        <h6>{session?.user?.email}</h6>
+        <span>Provider:<b>{session?.user?.provider}</b></span>
         {
           session ? (
 <button onClick={() => signOut()}>Sign Out</button>
