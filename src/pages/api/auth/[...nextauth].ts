@@ -14,7 +14,6 @@ import { JWT } from "next-auth/jwt";
 
 
 export default NextAuth({
-  adapter: MongoDBAdapter(clientPromise),
   providers: [
     // OAuth authentication providers...
     FacebookProvider({
@@ -44,6 +43,7 @@ export default NextAuth({
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
+  adapter: MongoDBAdapter(clientPromise),
   session: {
     strategy: "jwt",
   },
