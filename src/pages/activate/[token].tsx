@@ -3,12 +3,13 @@ import {NextPageContext} from "next";
 import {useEffect, useState} from "react";
 import {signIn} from 'next-auth/react'
 
-export default function activate({token}: {token: string}) {
+export default function Activate({token}: {token: string}) {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
   useEffect(() => {
-    activateAccount();
+      activateAccount();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
   const activateAccount = async () => {

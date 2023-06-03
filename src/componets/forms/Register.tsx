@@ -63,6 +63,8 @@ const RegisterForm: React.FunctionComponent<IRegisterProps> = (props) => {
     formState: {errors, isSubmitting},
   } = useForm<FormSchemaType>({resolver: zodResolver(FormSchema)});
 
+  let mon = watch().password
+
   const onSubmit: SubmitHandler<FormSchemaType> = async (values) => {
 
     try{
@@ -82,8 +84,9 @@ const RegisterForm: React.FunctionComponent<IRegisterProps> = (props) => {
   }
 
   useEffect(() => {
-     setPasswordScore(validatePasswordStrength)
-  },[watch().password])
+     setPasswordScore(validatePasswordStrength())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[mon])
 
   return (
     <div className="w-full px-12 py-4">
