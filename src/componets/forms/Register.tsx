@@ -12,7 +12,6 @@ import validator from "validator";
 import zxcvbn from 'zxcvbn';
 import {SlideButton} from '../buttons/SlideButton';
 import {toast} from 'react-toastify'
-import { error } from "console";
 import Link from "next/link";
 
 interface IRegisterProps {}
@@ -77,13 +76,13 @@ const RegisterForm: React.FunctionComponent<IRegisterProps> = (props) => {
     }
   };
 
-  const validatePasswordStreanght=()=>{
+  const validatePasswordStrength=()=>{
     let password = watch().password;
     return zxcvbn(password ? password : "").score;
   }
 
   useEffect(() => {
-     setPasswordScore(validatePasswordStreanght)
+     setPasswordScore(validatePasswordStrength)
   },[watch().password])
 
   return (

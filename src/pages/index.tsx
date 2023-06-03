@@ -5,6 +5,7 @@ import {
 } from "react-icons/ai";
 import {SiUdemy} from 'react-icons/si'
 import {FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube} from 'react-icons/fa'
+import Image from 'next/image'
 
 export default function Home() {
   const { data: session } = useSession();
@@ -31,7 +32,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full flex justify-center">
-              <img
+              <Image
                 src={session?.user?.image!}
                 alt={`${session?.user?.name} image`}
                 className="rounded-full h-40 w-40"
