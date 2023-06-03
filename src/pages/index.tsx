@@ -8,7 +8,6 @@ import {FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube} from 'react-i
 
 export default function Home() {
   const { data: session } = useSession();
-  console.log(session);
 
   const text1 =
     "Proident in nisi sit aliqua dolor aliquip tempor minim reprehenderit do sint. Et ad sint anim magna in duis anim veniam ad mollit sint consectetur. Ad commodo esse ullamco commodo reprehenderit proident ea commodo consequat adipisicing mollit ea.Pariatur commodo ea magna ex nulla incididunt ut. Aute labore velit qui consectetur Lorem ad reprehenderit ex consequat tempor in ex. Ullamco quis anim voluptate magna aute irure ad excepteur cillum anim cupidatat. Id dolor velit proident in";
